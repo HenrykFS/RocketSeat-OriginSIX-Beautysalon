@@ -256,9 +256,36 @@ nav.show div.icon-close {
   top: 1.5rem;
 }
 
+.icon-close:hover, 
+.icon-menu:hover {
+  color: #3bae86;
+}
+
 /*==== Home =====================*/
 #home {
   overflow: hidden;
+}
+
+#home #square-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -11.2%;
+  left: 8.5%;
+  background: #96ebcd;
+  z-index: 0;
+  border-radius: 0.25rem;
+}
+
+#home #square-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -5.6%;
+  left: 0%;
+  background: #3bae86;
+  z-index: 0;
+  border-radius: 0.25rem;
 }
 
 #home .container {
@@ -328,6 +355,28 @@ nav.show div.icon-close {
   z-index: 0;
 }
 
+#about #square-1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -5.52%;
+  left: -20%;
+  background: #96ebcd;
+  z-index: 0;
+  border-radius: 0.25rem;
+}
+
+#about #square-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -2.76%;
+  left: -9%;
+  background: #3bae86;
+  z-index: 0;
+  border-radius: 0.25rem;
+}
+
 #about .image img {
   position: relative;
 }
@@ -343,6 +392,10 @@ nav.show div.icon-close {
 }
 
 /*==== Services =====================*/
+#services strong:hover {
+  color: #3bae86;
+}
+
 .cards.grid {
   gap: 1.5rem;
 }
@@ -355,15 +408,23 @@ nav.show div.icon-close {
   text-align: center;
 }
 
+.card:hover {
+  border-color: #3bae86;
+}
+
 .card i {
   display: block;
-  margin-bottom: 1.5rem;
   font-size: 5rem;
   color: var(--base-color);
 }
 
+.card:hover i {
+  color: #3bae86;
+}
+
 .card .title {
   font-size: 1.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -436,6 +497,7 @@ nav.show div.icon-close {
 /*==== Contact =====================*/
 #contact .grid {
   gap: 4rem;
+  align-items: center;
 }
 
 #contact .grid p {
@@ -446,6 +508,11 @@ nav.show div.icon-close {
 #contact ul li i {
   font-size: 1.5rem;
   margin-right: 0.625rem;
+}
+
+#contact .button:hover i {
+  transform: translateY(-4px);
+  transition: 0.1s;
 }
 
 #contact ul.grid {
@@ -459,6 +526,11 @@ nav.show div.icon-close {
 
 #contact ul li i {
   color: var(--base-color);
+  transition: 0.3s;
+}
+
+#contact ul li:hover i {
+  transform: translateY(-8px);
 }
 
 /*==== Footer =====================*/
@@ -475,13 +547,18 @@ footer .logo {
   margin-bottom: 1.5rem;
 }
 
+footer .logo:hover {
+  transform: translateY(-8px);
+  transition: 0.3s;
+}
+
 footer .brand p {
   color: var(--text-color-light);
   margin-bottom: 0.75rem;
 }
 
 footer i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--text-color-light);
 }
 
@@ -518,6 +595,12 @@ footer .social a:hover {
   opacity: 0;
   transition: 0.2s;
   transform: translateY(100%);
+}
+
+.back-to-top.show:hover {
+  transform: translateY(-8px);
+  transition: 0.3s;
+  background: #3bae86;
 }
 
 .back-to-top.show {
@@ -647,6 +730,124 @@ footer .social a:hover {
   }
 }
 /* Large device: 1023 > */
+@media (min-width: 1023px) {
+  /* reusable classes */
+  .container {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32.6875rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.425rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li .title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* layout */
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24.75rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    grid-auto-flow: column;
+    margin: 0 auto;
+  }
+
+  /* services */
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* testimonials */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-auto-flow: column;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+    align-items: center;
+  }
+
+  /* footer */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
 /* Large device: 992 > */
 @media (min-width: 992px) {
   :root {
