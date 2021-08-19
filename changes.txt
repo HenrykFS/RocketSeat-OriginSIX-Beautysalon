@@ -1,0 +1,14 @@
+1.0.0
+  color change hover effects
+  translateY effects on hover icons and footer logo
+  add square-1 and square-2 to images background
+
+1.1.0
+  sidebar with socials
+  footer ajustments
+  box-shadow hover effect on cards
+  spacing back -to-top buttons
+  add right quote on testimonials
+  add line under testimonials user name
+  resizing squares on home image
+  change media query to 1200px min
