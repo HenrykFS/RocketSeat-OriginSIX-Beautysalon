@@ -133,7 +133,7 @@ body {
   left: 0;
   z-index: 100;
   background-color: var(--body-color);
-  
+
   width: 100%;
 }
 
@@ -505,9 +505,10 @@ nav.show div.icon-close {
   width: 2rem;
   height: 2rem;
   object-fit: cover;
-  clip-path: circle();
+  border-radius: 50%;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+  border: 1px solid var(--base-color);
 }
 
 /* Swiper */
@@ -597,7 +598,6 @@ footer .brand p {
   margin-bottom: 0.75rem;
 }
 
-
 /*back to top*/
 .back-to-top {
   background: var(--base-color);
@@ -611,7 +611,9 @@ footer .brand p {
   bottom: 2rem;
   padding: 0.5rem;
 
-  clip-path: circle();
+  border-radius: 50%;
+  border: 2px solid white;
+
 
   visibility: hidden;
   opacity: 0;
@@ -632,125 +634,7 @@ footer .brand p {
 }
 
 /*==== Media Queries =====================*/
-/* Extra large device: 1200 > */
-@media (min-width: 1200px) {
-  /* reusable classes */
-  .container {
-    max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .section {
-    padding: 10rem 0;
-  }
-
-  .section header,
-  #testimonials header {
-    max-width: 32.6875rem;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .button {
-    height: 3.425rem;
-  }
-
-  nav .menu {
-    opacity: 1;
-    visibility: visible;
-    top: 0;
-  }
-
-  nav .menu ul {
-    display: flex;
-    gap: 2rem;
-  }
-
-  nav .menu ul li .title {
-    font: 400 1rem var(--body-font);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  nav .menu ul li a.title.active {
-    font-weight: bold;
-    -webkit-font-smoothing: auto;
-  }
-
-  nav .icon-menu {
-    display: none;
-  }
-
-  /* layout */
-  main {
-    margin-top: var(--header-height);
-  }
-
-  /* home */
-  #home .container {
-    grid-auto-flow: column;
-    justify-content: space-between;
-    margin: 0 auto;
-  }
-
-  #home .image {
-    order: 1;
-  }
-
-  #home .text {
-    order: 0;
-    max-width: 24.75rem;
-    text-align: left;
-  }
-
-  /* about */
-  #about .container {
-    grid-auto-flow: column;
-    margin: 0 auto;
-  }
-
-  /* services */
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  /* testimonials */
-  #testimonials .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* contact */
-  #contact .container {
-    grid-auto-flow: column;
-  }
-
-  #contact .text {
-    max-width: 25rem;
-    align-items: center;
-  }
-
-  /* footer */
-  footer.section {
-    padding: 0rem;
-  }
-
-  footer .container {
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  footer .logo {
-    font-size: 2.25rem;
-  }
-}
 /* Large device: 1200 > */
 @media (min-width: 1200px) {
   /* reusable classes */
@@ -809,23 +693,20 @@ footer .brand p {
     display: grid;
     position: fixed;
     left: 0;
-    top: 0;
-    margin-top: var(--header-height);
+    bottom: 0;
+    top: var(--header-height);
+    border-right: 1px solid #e4e4e4;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
 
-    height: 70vh;
     width: 5vw;
 
     color: var(--base-color);
     background: var(--body-color);
-    border-radius: 0px 0px 5px 0px;
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.15);
 
-
-  
     align-items: center;
     justify-items: center;
   }
-  
+
   .sidebar i {
     font-size: 4vh;
     color: var(--base-color);
@@ -833,13 +714,13 @@ footer .brand p {
     justify-content: center;
     transition: 0.2s;
   }
-  
+
   .sidebar i:hover {
     color: #3bae86;
     transform: translateY(-8px);
     transition: 0.3s;
   }
-  
+
   /* layout */
   main {
     margin-top: var(--header-height);
@@ -862,10 +743,54 @@ footer .brand p {
     text-align: left;
   }
 
+  #home #square-1 {
+    width: 90%;
+    left: 8%;
+  }
+
+  #home #square-2 {
+    width: 95%;
+    left: -1%;
+  }
+
   /* about */
   #about .container {
     grid-auto-flow: column;
     margin: 0 auto;
+  }
+
+  #about .image::before {
+    content: '';
+    height: 100%;
+    width: 85%;
+    background: var(--base-color-second);
+    position: absolute;
+    border-radius: 0.25rem;
+    top: -8.3%;
+    left: -15%;
+    z-index: 0;
+  }
+
+  #about #square-1 {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: -5.52%;
+    left: -10%;
+    background: #96ebcd;
+    z-index: 0;
+    border-radius: 0.25rem;
+  }
+  
+  #about #square-2 {
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    top: -2.76%;
+    left: -5%;
+    background: #3bae86;
+    z-index: 0;
+    border-radius: 0.25rem;
   }
 
   /* services */
