@@ -21,9 +21,19 @@
   adjust sizes of squares on 1200px media query
   resizing sidebar
 
+
+1.3.0
+  adjust pop out header when scrolling
+  align logo to the left
+  align navbar to the left
+  change the footer color text to white
+
+  resizing the sidebar
+  adding text to the sidebar
+  smoothing animation on sidebar
+
 upcoming changes:
   add more testimonials
-  dinamic chage of color on back-to-top button when over footer
-  effects on images
+  effects on shapes
   add more background shapes
   add gradient colors

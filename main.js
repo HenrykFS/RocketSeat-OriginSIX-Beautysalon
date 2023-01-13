@@ -22,7 +22,7 @@ const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
 function changeHeaderWhenScroll() {
-  if (window.scrollY >= navHeight) {
+  if (window.scrollY >= 1) {
     // scroll é maior que a altura do header
     header.classList.add('scroll')
   } else {
