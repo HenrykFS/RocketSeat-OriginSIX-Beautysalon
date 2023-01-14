@@ -1,9 +1,9 @@
-1.0.0
+v1.0.0
   color change hover effects
   translateY effects on hover icons and footer logo
   add square-1 and square-2 to images background
 
-1.1.0
+v1.1.0
   sidebar with socials
   footer ajustments
   box-shadow hover effect on cards
@@ -13,7 +13,7 @@
   resizing squares on home image
   change media query to 1200px min
 
-1.2.0
+v1.2.0
   add border on testimonials user image
   add border on back-to-top button
   add shadow on sidebar
@@ -21,8 +21,7 @@
   adjust sizes of squares on 1200px media query
   resizing sidebar
 
-
-1.3.0
+v1.3.0
   adjust pop out header when scrolling
   align logo to the left
   align navbar to the left
@@ -30,10 +29,23 @@
 
   resizing the sidebar
   adding text to the sidebar
-  smoothing animation on sidebar
+  smoothing animation of sidebar icons
+
+v1.3.1
+  resizing icons of the sidebar
+  effect on icons when hover sidebar button
+  hover effect on images shapes
+
 
 upcoming changes:
+  bottom border bar on sidebar buttons
+  adjust back-to-top buttom appearence moment
+  adjust quotes sign on mobile mode
+  spacing out the footer's logo from the footer's top
+
   add more testimonials
-  effects on shapes
   add more background shapes
-  add gradient colors
+
+  responsive for tablets and mid-screens
+
+  create read.me

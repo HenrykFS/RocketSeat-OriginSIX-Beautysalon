@@ -44,6 +44,7 @@ img {
 /*==== Base =====================*/
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -308,6 +309,23 @@ nav.show div.icon-close {
   transition: 0.3s;
 }
 
+#home #square-3 {
+  height: 100%;
+  width: 85%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  border-radius: 0.25rem;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+#home #square-3:hover {
+  background: #abd8c8;
+  transition: 0.3s;
+}
+
 #home .container {
   margin: 0;
 }
@@ -316,27 +334,12 @@ nav.show div.icon-close {
   position: relative;
 }
 
-#home #square-3 {
-  height: 100%;
-  width: 85%;
-  background: var(--base-color-second);
-  position: absolute;
-  top: -16.8%;
-  left: 16.7%;
-  z-index: -1;
-}
-
-#home #square-3:hover {
-  background: #abd8c8;
-}
-
 #home .image img {
   position: relative;
   right: 2.93rem;
 }
 
-#home .image img,
-#home .image::before {
+#home .image img {
   border-radius: 0.25rem;
 }
 
@@ -367,17 +370,6 @@ nav.show div.icon-close {
   position: relative;
 }
 
-#about .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: var(--base-color-second);
-  position: absolute;
-  top: -8.3%;
-  left: -33%;
-  z-index: 0;
-}
-
 #about #square-1 {
   width: 100%;
   height: 100%;
@@ -387,6 +379,12 @@ nav.show div.icon-close {
   background: #96ebcd;
   z-index: 0;
   border-radius: 0.25rem;
+  transition: 0.5s;
+}
+
+#about #square-1:hover {
+  background: #47d1a1;
+  transition: 0.3s;
 }
 
 #about #square-2 {
@@ -398,14 +396,41 @@ nav.show div.icon-close {
   background: #3bae86;
   z-index: 0;
   border-radius: 0.25rem;
+  transition: 0.5s;
+}
+
+#about #square-2:hover {
+  background: #2b7a5e;
+  transition: 0.3s;
+}
+
+#about #square-3 {
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: -33%;
+  z-index: -1;
+  border-radius: 0.25rem;
+  transition: 0.5s;
+}
+
+#about #square-3:hover {
+  background: #abd8c8;
+  transition: 0.3s;
+}
+
+#about img::before{
+  content: none;
+
 }
 
 #about .image img {
   position: relative;
 }
 
-#about .image img,
-#about .image::before {
+#about .image img {
   border-radius: 0.25rem;
 }
 
@@ -710,40 +735,55 @@ footer .brand p {
     z-index: 100;
 
     display: grid;
-
     position: fixed;
+
+    top: var(--header-height);
     left: 0;
     bottom: 0;
-    top: var(--header-height);
+
+    padding-bottom: 300px;
+    
+    font: 400 1rem var(--body-font);
+    color: var(--base-color);
+    background: var(--body-color);
     border-right: 1px solid #e4e4e4;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
 
-    font: 400 1rem var(--body-font);
-    
     width: fit-content;
 
-    color: var(--base-color);
-    background: var(--body-color);
-
-    align-items: center;
     justify-items: left;
+    align-items: center;
 
     transition: 0.5s;
+  }
+
+  .sidebar .link{
+    width: fit-content;
+    height: fit-content;
+    padding-right: 10px;
   }
 
   .sidebar a{
     display: flex;
     align-items: center;
+    justify-items: left;
 
     margin-left: 12px;
     margin-right: 20px;
 
     font: 400 1.2rem var(--body-font);
-    color: var(--text-color);
+    color: var(--base-color);
 
     width: 100%;
+    height: fit-content;
 
     transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    transform: translateY(-8px);
+    transition: 0.3s;
+    color: #3bae86;
   }
 
   .sidebar i {
@@ -751,14 +791,14 @@ footer .brand p {
     padding-right: 0.5vw;
     font: 400 1rem var(--body-font);
     font-size: 4vh;
-    color: var(--base-color);
+    color: inherit;
     display: grid;
     justify-content: center;
+    height: fit-content;
   }
 
-  .sidebar a:hover {
-    transform: translateY(-8px);
-    transition: 0.3s;
+  .sidebar a p{
+    color: var(--text-color);
   }
 
   /* layout */
@@ -798,19 +838,7 @@ footer .brand p {
     grid-auto-flow: column;
     margin: 0 auto;
   }
-
-  #about .image::before {
-    content: '';
-    height: 100%;
-    width: 85%;
-    background: var(--base-color-second);
-    position: absolute;
-    border-radius: 0.25rem;
-    top: -8.3%;
-    left: -15%;
-    z-index: 0;
-  }
-
+  
   #about #square-1 {
     width: 90%;
     height: 100%;
@@ -832,11 +860,22 @@ footer .brand p {
     z-index: 0;
     border-radius: 0.25rem;
   }
-
+  
+  #about #square-3 {
+    height: 100%;
+    width: 85%;
+    background: var(--base-color-second);
+    position: absolute;
+    border-radius: 0.25rem;
+    top: -8.3%;
+    left: -15%;
+    z-index: -1;
+  }
+  
   /* services */
-.container.grid{
+  .container.grid{
   margin-left: auto;
-}
+  }
 
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
